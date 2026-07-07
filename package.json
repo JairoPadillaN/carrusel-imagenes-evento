@@ -1,0 +1,18 @@
+{
+  "name": "media-carousel",
+  "version": "1.0.0",
+  "description": "Carrusel de imagenes y videos para eventos, con frases aleatorias, modulo de carga y modulo de personalizacion en vivo.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "multer": "^2.0.1",
+    "socket.io": "^4.7.5"
+  }
+}

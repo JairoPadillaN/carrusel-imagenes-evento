@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cargar archivos · Panel del evento</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/admin.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="mark">✦</span>
+      <div>
+        <div class="sub">Panel del evento</div>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="/" target="_blank" rel="noopener">Ver carrusel ↗</a>
+      <a href="/upload" class="active">Cargar archivos</a>
+      <a href="/admin">Personalizacion</a>
+      <button class="logout" id="logout-btn">Cerrar sesion</button>
+    </nav>
+  </header>
+
+  <main class="shell">
+    <div class="page-head">
+      <span class="eyebrow">Modulo de carga</span>
+      <h1>Imagenes y videos del carrusel</h1>
+      <p>Selecciona los archivos, revisa la vista previa y confirma para subirlos. No hay limite de peso ni duracion, solo que el archivo sea legible.</p>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <section class="panel">
+      <h2 class="section-title">Seleccionar archivos</h2>
+
+      <div class="dropzone" id="dropzone">
+        <div class="icon">⇪</div>
+        <div class="title">Arrastra tus archivos aqui</div>
+        <div class="sub">o haz clic para elegirlos desde tu equipo · imagenes y videos</div>
+      </div>
+      <input type="file" id="file-input" accept="image/*,video/*" multiple hidden>
+
+      <div id="preview-grid" class="preview-grid"></div>
+
+      <div style="display:flex; gap:0.75rem; margin-top:1.5rem; justify-content:flex-end;" id="upload-actions" hidden>
+        <button class="btn btn-ghost" id="clear-btn" type="button">Quitar todo</button>
+        <button class="btn" id="upload-btn" type="button">Subir <span id="upload-count"></span></button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2 class="section-title">
+        Archivos ya cargados
+        <span class="count-pill" id="existing-count">0</span>
+      </h2>
+      <div id="existing-list" class="existing-list"></div>
+    </section>
+  </main>
+
+  <script src="/assets/js/common.js"></script>
+  <script src="/assets/js/upload.js"></script>
+</body>
+</html>

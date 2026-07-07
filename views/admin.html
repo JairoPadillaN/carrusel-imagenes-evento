@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personalizacion · Panel del evento</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Work+Sans:wght@400;500;600&family=Playball&family=Petit+Formal+Script&family=Lobster&family=Cookie&family=Agbalumo&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/admin.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="mark">✦</span>
+      <div>
+        <div class="sub">Panel del evento</div>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="/" target="_blank" rel="noopener">Ver carrusel ↗</a>
+      <a href="/upload">Cargar archivos</a>
+      <a href="/admin" class="active">Personalizacion</a>
+      <button class="logout" id="logout-btn">Cerrar sesion</button>
+    </nav>
+  </header>
+
+  <main class="shell">
+    <div class="page-head">
+      <span class="eyebrow">Modulo de personalizacion</span>
+      <h1>Estilo de las frases</h1>
+      <p>Elige la tipografia, el color y el efecto de transicion. Al guardar, todas las pantallas del carrusel conectadas se actualizan al instante.</p>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <div class="grid-2">
+      <div>
+        <section class="panel">
+          <h2 class="section-title">Tipografia de la frase</h2>
+          <div class="font-option-grid" id="font-options"></div>
+        </section>
+
+        <section class="panel">
+          <h2 class="section-title">Color del texto</h2>
+          <div class="field" style="margin-bottom:0;">
+            <label for="color-input">Color (dorado por defecto)</label>
+            <input type="color" id="color-input" value="#D4AF37">
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2 class="section-title">Efecto de transicion</h2>
+          <div class="transition-option-grid" id="transition-options">
+            <div class="transition-option" data-value="fade">Fundido</div>
+            <div class="transition-option" data-value="zoom">Zoom suave</div>
+            <div class="transition-option" data-value="slide">Deslizar</div>
+          </div>
+        </section>
+
+        <button class="btn btn-block" id="save-btn" style="margin-top:0.5rem;">Guardar y aplicar a todas las pantallas</button>
+      </div>
+
+      <div>
+        <section class="panel" style="position:sticky; top:6rem;">
+          <h2 class="section-title">
+            Vista previa
+            <span style="font-size:0.72rem; color:var(--muted); font-weight:400;">
+              <span class="live-dot"></span>en vivo
+            </span>
+          </h2>
+          <div class="mini-stage">
+            <span class="mini-stage-label">Pantalla del carrusel</span>
+            <div id="preview-phrase">Gracias por ser parte de esta historia.</div>
+          </div>
+          <p class="help-text">Esta vista previa es orientativa. El texto real se ajusta de tamano segun su longitud.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script src="/assets/js/common.js"></script>
+  <script src="/assets/js/admin.js"></script>
+</body>
+</html>
