@@ -1,5 +1,7 @@
 {
   "phraseFont": "Playball",
-  "phraseColor": "#f1d71b",
-  "transitionEffect": "fade"
+  "phraseColor": "#D4AF37",
+  "transitionEffect": "fade",
+  "imageDurationSeconds": 10,
+  "phraseBaseSize": 4.6
 }

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Personalizacion · Panel del evento</title>
+<title>Personalizacion · Carrusel de Medios</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Work+Sans:wght@400;500;600&family=Playball&family=Petit+Formal+Script&family=Lobster&family=Cookie&family=Agbalumo&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@
     <div class="brand">
       <span class="mark">✦</span>
       <div>
-        <div class="sub">Panel del evento</div>
+        <div class="sub">Panel de medios</div>
       </div>
     </div>
     <nav class="nav-links">
@@ -47,6 +47,26 @@
           <div class="field" style="margin-bottom:0;">
             <label for="color-input">Color (dorado por defecto)</label>
             <input type="color" id="color-input" value="#D4AF37">
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2 class="section-title">Tamano de la frase</h2>
+          <div class="field" style="margin-bottom:0;">
+            <label for="size-input">
+              Tamano base del texto <span id="size-value" class="count-pill">4.6rem</span>
+            </label>
+            <input type="range" id="size-input" min="2" max="7" step="0.1" value="4.6">
+            <p class="help-text">Es el tamano para frases cortas. Las frases largas se reducen automaticamente en la misma proporcion para que siempre quepan en pantalla.</p>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2 class="section-title">Tiempo de visualizacion</h2>
+          <div class="field" style="margin-bottom:0;">
+            <label for="duration-input">Segundos por imagen</label>
+            <input type="text" inputmode="numeric" id="duration-input" value="30">
+            <p class="help-text">Tiempo que permanece cada imagen en pantalla antes de pasar a la siguiente (3 a 600 segundos). No afecta a los videos, que se reproducen completos.</p>
           </div>
         </section>
 

@@ -194,6 +194,14 @@ input[type="color"] {
 
 .field { margin-bottom: 1.25rem; }
 
+input[type="range"] {
+  width: 100%;
+  accent-color: var(--gold);
+  height: 1.6rem;
+  cursor: pointer;
+  background: transparent;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;

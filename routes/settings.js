@@ -25,7 +25,7 @@ module.exports = function createSettingsRouter(io) {
   });
 
   router.post('/api/settings', requireAuth, (req, res) => {
-    const { phraseFont, phraseColor, transitionEffect } = req.body || {};
+    const { phraseFont, phraseColor, transitionEffect, imageDurationSeconds, phraseBaseSize } = req.body || {};
 
     if (!ALLOWED_FONTS.has(phraseFont)) {
       return res.status(400).json({ error: 'Fuente no permitida' });
@@ -37,7 +37,23 @@ module.exports = function createSettingsRouter(io) {
       return res.status(400).json({ error: 'Efecto de transicion no permitido' });
     }
 
-    const newSettings = { phraseFont, phraseColor, transitionEffect };
+    const duration = Number(imageDurationSeconds);
+    if (!Number.isFinite(duration) || duration < 3 || duration > 600) {
+      return res.status(400).json({ error: 'La duracion de la imagen debe estar entre 3 y 600 segundos' });
+    }
+
+    const baseSize = Number(phraseBaseSize);
+    if (!Number.isFinite(baseSize) || baseSize < 1.5 || baseSize > 8) {
+      return res.status(400).json({ error: 'El tamano de fuente debe estar entre 1.5 y 8 rem' });
+    }
+
+    const newSettings = {
+      phraseFont,
+      phraseColor,
+      transitionEffect,
+      imageDurationSeconds: duration,
+      phraseBaseSize: baseSize,
+    };
     fs.writeFileSync(settingsPath, JSON.stringify(newSettings, null, 2));
 
     // Notifica en vivo a todas las pantallas del carrusel conectadas
